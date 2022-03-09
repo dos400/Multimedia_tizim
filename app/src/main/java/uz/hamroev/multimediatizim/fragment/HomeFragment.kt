@@ -1,11 +1,14 @@
 package uz.hamroev.multimediatizim.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import uz.hamroev.multimediatizim.R
+import uz.hamroev.multimediatizim.adapter.ProvinceAdapter
+import uz.hamroev.multimediatizim.databinding.FragmentHomeBinding
+import uz.hamroev.multimediatizim.model.Province
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,12 +33,45 @@ class HomeFragment : Fragment() {
         }
     }
 
+    lateinit var binding: FragmentHomeBinding
+    private lateinit var list: ArrayList<Province>
+    lateinit var provinceAdapter: ProvinceAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+
+        loadProvince()
+        provinceAdapter = ProvinceAdapter(
+            binding.root.context,
+            list,
+            object : ProvinceAdapter.OnProvinceClickListener {
+                override fun onClick(province: Province, position: Int) {
+
+                }
+            })
+        binding.rvRegions.adapter = provinceAdapter
+
+        return binding.root
+    }
+
+    private fun loadProvince() {
+        list = ArrayList()
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
     }
 
     companion object {

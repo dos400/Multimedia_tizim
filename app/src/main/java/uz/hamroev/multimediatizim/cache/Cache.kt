@@ -19,19 +19,19 @@ object Cache {
         editor.apply()
     }
 
-    var til: String?
-        get() = sharedPreferences.getString("til1", "uz")
+    var language: String?
+        get() = sharedPreferences.getString("language", "ru")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("til1", value)
+                it.putString("language", value)
             }
         }
 
     var position: String?
-        get() = sharedPreferences.getString("joy", "0")
+        get() = sharedPreferences.getString("position", "0")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("joy", value)
+                it.putString("position", value)
             }
         }
 
@@ -40,10 +40,10 @@ object Cache {
 
 
     var path: String?
-        get() = sharedPreferences.getString("turmush", "")
+        get() = sharedPreferences.getString("path", "")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("turmush", value)
+                it.putString("path", value)
             }
         }
 

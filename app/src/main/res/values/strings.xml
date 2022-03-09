@@ -2,4 +2,8 @@
     <string name="app_name">Multimedia Tizim</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="version_1_0">version 1.0</string>
+    <string name="app_name_long">Multimedia Tizim</string>
+    <string name="buxoro_viloyati">Buxoro viloyati</string>
 </resources>
