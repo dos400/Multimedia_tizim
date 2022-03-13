@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Multimedia Tizim</string>
+    <string name="hello_blank_fragment">hh</string>
+    <string name="version_1_0">version 1.0</string>
+    <string name="app_name_long">Multimedia Tizim</string>
+
+    <string name="tashkent">город Ташкент</string>
+    <string name="bukhara">Бухарская область</string>
+    <string name="andijon">Андижанская область</string>
+    <string name="fergana">Ферганская область</string>
+    <string name="jizzax">Джизакская область</string>
+    <string name="xorazm">Хорезмская область</string>
+    <string name="namangan">Наманганская область</string>
+    <string name="navoiy">Навоийская область</string>
+    <string name="qashqadaryo">Кашкадарьинская область</string>
+    <string name="qoraqalpogiston">Республика Каракалпакстан</string>
+    <string name="samarqand">Самаркандская область</string>
+    <string name="sirdaryo">Сырдарьинская область</string>
+    <string name="surxandaryo">Сурхандарьинская область</string>
+    <string name="tashkent_viloyat">Ташкентская область</string>
+
+
+    <string name="language_rus">Русский язык</string>
+    <string name="language_krill">Ўзбек тили</string>
+    <string name="language_uzb">O\'zbek tili</string>
+
+</resources>

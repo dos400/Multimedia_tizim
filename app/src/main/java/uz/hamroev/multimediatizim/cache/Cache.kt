@@ -20,30 +20,18 @@ object Cache {
     }
 
     var language: String?
-        get() = sharedPreferences.getString("language", "ru")
+        get() = sharedPreferences.getString("til1", "ru")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("language", value)
+                it.putString("til1", value)
             }
         }
-
-    var position: String?
-        get() = sharedPreferences.getString("position", "0")
-        set(value) = sharedPreferences.edit() {
-            if (value != null) {
-                it.putString("position", value)
-            }
-        }
-
-
-    //mavzular uchun cache
-
 
     var path: String?
-        get() = sharedPreferences.getString("path", "")
+        get() = sharedPreferences.getString("joy", "0")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("path", value)
+                it.putString("joy", value)
             }
         }
 

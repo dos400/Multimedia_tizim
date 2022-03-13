@@ -5,5 +5,26 @@
 
     <string name="version_1_0">version 1.0</string>
     <string name="app_name_long">Multimedia Tizim</string>
-    <string name="buxoro_viloyati">Buxoro viloyati</string>
+
+    <string name="tashkent">Toshkent shahar</string>
+    <string name="bukhara">Buxoro viloyati</string>
+    <string name="andijon">Andijon viloyati</string>
+    <string name="fergana">Farg\'ona viloyati</string>
+    <string name="jizzax">Jizzax viloyati</string>
+    <string name="xorazm">Xorazm viloyati</string>
+    <string name="namangan">Namanngan viloyati</string>
+    <string name="navoiy">Navoiy viloyati</string>
+    <string name="qashqadaryo">Qashqadaryo viloyati</string>
+    <string name="qoraqalpogiston">Qoraqalpog\'iston Respublikasi</string>
+    <string name="samarqand">Samarqand viloyati</string>
+    <string name="sirdaryo">Sirdaryo viloyati</string>
+    <string name="surxandaryo">Surxandaryo viloyati</string>
+    <string name="tashkent_viloyat">Toshkent viloyati</string>
+
+
+    <string name="language_rus">Русский язык</string>
+    <string name="language_krill">Ўзбек тили</string>
+    <string name="language_uzb">O\'zbek tili</string>
+
+
 </resources>

@@ -1,14 +1,19 @@
 package uz.hamroev.multimediatizim.fragment
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import uz.hamroev.multimediatizim.R
 import uz.hamroev.multimediatizim.adapter.ProvinceAdapter
+import uz.hamroev.multimediatizim.cache.Cache
 import uz.hamroev.multimediatizim.databinding.FragmentHomeBinding
 import uz.hamroev.multimediatizim.model.Province
+import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +41,7 @@ class HomeFragment : Fragment() {
     lateinit var binding: FragmentHomeBinding
     private lateinit var list: ArrayList<Province>
     lateinit var provinceAdapter: ProvinceAdapter
+    private val TAG = "HomeFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,13 +49,17 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
+        checkLanguage()
         loadProvince()
+
         provinceAdapter = ProvinceAdapter(
             binding.root.context,
             list,
             object : ProvinceAdapter.OnProvinceClickListener {
                 override fun onClick(province: Province, position: Int) {
-
+                    when (position) {
+                        
+                    }
                 }
             })
         binding.rvRegions.adapter = provinceAdapter
@@ -57,21 +67,48 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    private fun checkLanguage() {
+        Log.d(TAG, "checkLanguage: ${Cache.language}")
+        when (Cache.language) {
+            "uz" -> {
+                setAppLocale(requireContext(), "en")
+            }
+            "ru" -> {
+                setAppLocale(requireContext(), "ru")
+            }
+            "krill" -> {
+                setAppLocale(requireContext(), "uz")
+            }
+        }
+    }
+    fun setAppLocale(context: Context, language: String) {
+        val locale = Locale(language)
+        Locale.setDefault(locale)
+        val config = context.resources.configuration
+        config.setLocale(locale)
+        context.createConfigurationContext(config)
+        context.resources.updateConfiguration(
+            config,
+            context.resources.displayMetrics
+        )
+    }
+
     private fun loadProvince() {
         list = ArrayList()
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
-        list.add(Province("Buxoro viloyati", R.drawable.ic_bukhara))
+        list.add(Province(resources.getString(R.string.tashkent), R.drawable.ic_tashkent))
+        list.add(Province(resources.getString(R.string.bukhara), R.drawable.ic_bukhara))
+        list.add(Province(resources.getString(R.string.andijon), R.drawable.ic_andijon))
+        list.add(Province(resources.getString(R.string.fergana), R.drawable.ic_ferghana))
+        list.add(Province(resources.getString(R.string.jizzax), R.drawable.ic_jizzax))
+        list.add(Province(resources.getString(R.string.xorazm), R.drawable.ic_xorazm))
+        list.add(Province(resources.getString(R.string.namangan), R.drawable.ic_namangan))
+        list.add(Province(resources.getString(R.string.navoiy), R.drawable.ic_navoiy))
+        list.add(Province(resources.getString(R.string.qashqadaryo), R.drawable.ic_qashqadaryo))
+        list.add(Province(resources.getString(R.string.qoraqalpogiston), R.drawable.ic_qaroqalpogiston))
+        list.add(Province(resources.getString(R.string.samarqand), R.drawable.ic_samarkand))
+        list.add(Province(resources.getString(R.string.sirdaryo), R.drawable.ic_sirdayo))
+        list.add(Province(resources.getString(R.string.surxandaryo), R.drawable.ic_surxandaryo))
+        list.add(Province(resources.getString(R.string.tashkent_viloyat), R.drawable.ic_tashkent_vil))
     }
 
     companion object {
