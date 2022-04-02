@@ -25,4 +25,12 @@
     <string name="language_krill">Ўзбек тили</string>
     <string name="language_uzb">O\'zbek tili</string>
 
+    <string name="sec_tarixiy">Историческая информация</string>
+    <string name="sec_biografik">Биографическая информация</string>
+    <string name="sec_normativ">Нормативная документация</string>
+    <string name="sec_arxiv">Архив документов</string>
+    <string name="sec_fototeka">Фототека</string>
+    <string name="sec_videoteka">Видеотека</string>
+    <string name="sec_loyiha_haqida">О проекте</string>
+
 </resources>

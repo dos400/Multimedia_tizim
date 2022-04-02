@@ -20,18 +20,26 @@ object Cache {
     }
 
     var language: String?
-        get() = sharedPreferences.getString("til1", "ru")
+        get() = sharedPreferences.getString("language", "ru")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("til1", value)
+                it.putString("language", value)
             }
         }
 
     var path: String?
-        get() = sharedPreferences.getString("joy", "0")
+        get() = sharedPreferences.getString("path", "0")
         set(value) = sharedPreferences.edit() {
             if (value != null) {
-                it.putString("joy", value)
+                it.putString("path", value)
+            }
+        }
+
+    var regionName: String?
+        get() = sharedPreferences.getString("regionname", "0")
+        set(value) = sharedPreferences.edit() {
+            if (value != null) {
+                it.putString("regionname", value)
             }
         }
 

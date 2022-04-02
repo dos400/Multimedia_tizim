@@ -18,6 +18,13 @@ class ProvinceAdapter(
         RecyclerView.ViewHolder(itemProvinceBinding.root) {
 
         fun onBind(province: Province, position: Int) {
+
+
+
+            itemProvinceBinding.cardMain.setOnClickListener {
+                onProvinceClickListener.onClick(province, position)
+            }
+
             itemProvinceBinding.provinceName.text = province.provinceName
 
             try {
@@ -26,9 +33,7 @@ class ProvinceAdapter(
 
             }
 
-            itemProvinceBinding.root.setOnClickListener {
-                onProvinceClickListener.onClick(province, position)
-            }
+
         }
 
     }

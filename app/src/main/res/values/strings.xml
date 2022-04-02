@@ -26,5 +26,13 @@
     <string name="language_krill">Ўзбек тили</string>
     <string name="language_uzb">O\'zbek tili</string>
 
+    <string name="sec_tarixiy">Tarixiy ma\'lumotlar</string>
+    <string name="sec_biografik">Biografik ma\'lumotlar</string>
+    <string name="sec_normativ">Normativ Hujjatlar</string>
+    <string name="sec_arxiv">Arxiv Hujjatlar</string>
+    <string name="sec_fototeka">Fototeka</string>
+    <string name="sec_videoteka">Videoteka</string>
+    <string name="sec_loyiha_haqida">Lohiya haqida</string>
+
 
 </resources>

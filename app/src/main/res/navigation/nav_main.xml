@@ -9,5 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="uz.hamroev.multimediatizim.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_sectionsFragment"
+            app:destination="@id/sectionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sectionsFragment"
+        android:name="uz.hamroev.multimediatizim.fragment.SectionsFragment"
+        android:label="fragment_sections"
+        tools:layout="@layout/fragment_sections" />
 </navigation>

@@ -1,6 +1,7 @@
 package uz.hamroev.multimediatizim.fragment
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import uz.hamroev.multimediatizim.R
+import uz.hamroev.multimediatizim.activity.SectionsActivity
 import uz.hamroev.multimediatizim.adapter.ProvinceAdapter
 import uz.hamroev.multimediatizim.cache.Cache
 import uz.hamroev.multimediatizim.databinding.FragmentHomeBinding
@@ -58,8 +60,51 @@ class HomeFragment : Fragment() {
             object : ProvinceAdapter.OnProvinceClickListener {
                 override fun onClick(province: Province, position: Int) {
                     when (position) {
-                        
+                        0 -> {
+                            Cache.regionName = resources.getString(R.string.tashkent)
+                        }
+                        1 -> {
+                           Cache.regionName = resources.getString(R.string.bukhara)
+                        }
+                        2 -> {
+                           Cache.regionName = resources.getString(R.string.andijon)
+                        }
+                        3 -> {
+                           Cache.regionName = resources.getString(R.string.fergana)
+                        }
+                        4 -> {
+                           Cache.regionName = resources.getString(R.string.jizzax)
+                        }
+                        5 -> {
+                           Cache.regionName = resources.getString(R.string.xorazm)
+                        }
+                        6 -> {
+                           Cache.regionName = resources.getString(R.string.namangan)
+                        }
+                        7 -> {
+                           Cache.regionName = resources.getString(R.string.navoiy)
+                        }
+                        8 -> {
+                           Cache.regionName = resources.getString(R.string.qashqadaryo)
+                        }
+                        9 -> {
+                           Cache.regionName = resources.getString(R.string.qoraqalpogiston)
+                        }
+                        10 -> {
+                           Cache.regionName = resources.getString(R.string.samarqand)
+                        }
+                        11 -> {
+                           Cache.regionName = resources.getString(R.string.sirdaryo)
+                        }
+                        12 -> {
+                           Cache.regionName = resources.getString(R.string.surxandaryo)
+                        }
+                        13 -> {
+                           Cache.regionName = resources.getString(R.string.tashkent_viloyat)
+                        }
+
                     }
+                    startActivity(Intent(binding.root.context, SectionsActivity::class.java))
                 }
             })
         binding.rvRegions.adapter = provinceAdapter
@@ -81,6 +126,7 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
     fun setAppLocale(context: Context, language: String) {
         val locale = Locale(language)
         Locale.setDefault(locale)
@@ -104,11 +150,21 @@ class HomeFragment : Fragment() {
         list.add(Province(resources.getString(R.string.namangan), R.drawable.ic_namangan))
         list.add(Province(resources.getString(R.string.navoiy), R.drawable.ic_navoiy))
         list.add(Province(resources.getString(R.string.qashqadaryo), R.drawable.ic_qashqadaryo))
-        list.add(Province(resources.getString(R.string.qoraqalpogiston), R.drawable.ic_qaroqalpogiston))
+        list.add(
+            Province(
+                resources.getString(R.string.qoraqalpogiston),
+                R.drawable.ic_qaroqalpogiston
+            )
+        )
         list.add(Province(resources.getString(R.string.samarqand), R.drawable.ic_samarkand))
         list.add(Province(resources.getString(R.string.sirdaryo), R.drawable.ic_sirdayo))
         list.add(Province(resources.getString(R.string.surxandaryo), R.drawable.ic_surxandaryo))
-        list.add(Province(resources.getString(R.string.tashkent_viloyat), R.drawable.ic_tashkent_vil))
+        list.add(
+            Province(
+                resources.getString(R.string.tashkent_viloyat),
+                R.drawable.ic_tashkent_vil
+            )
+        )
     }
 
     companion object {
